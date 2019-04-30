@@ -13,10 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://bitbucket.org/fbarros/cron_parser'
   spec.license = 'MIT'
 
-  spec.files =
-    Dir.glob('{bin,lib}/**/*') +
-    %w[LICENSE README.md] +
-    %w[cron_parser.gemspec Gemfile Gemfile.lock Rakefile]
+  spec.files = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md cron_parser.gemspec Gemfile Gemfile.lock]
   spec.bindir = 'bin'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
