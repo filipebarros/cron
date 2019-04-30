@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cron_parser (0.1.0)
+    cron (0.0.1)
       thor
 
 GEM
@@ -48,7 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  cron_parser!
+  cron!
   rake
   rspec
   rubocop

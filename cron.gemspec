@@ -1,19 +1,19 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cron_parser/version'
+require 'cron/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'cron_parser'
-  spec.version = CronParser::VERSION
+  spec.name = 'cron'
+  spec.version = Cron::VERSION
   spec.authors = ['Filipe Barros']
   spec.email = ['afbarros@me.com']
 
   spec.summary = 'Deliveroo Tech Task'
   spec.description = 'Deliveroo Tech Task'
-  spec.homepage = 'https://bitbucket.org/fbarros/cron_parser'
+  spec.homepage = 'https://bitbucket.org/fbarros/cron'
   spec.license = 'MIT'
 
-  spec.files = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md cron_parser.gemspec Gemfile Gemfile.lock]
+  spec.files = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md cron.gemspec Gemfile Gemfile.lock]
   spec.bindir = 'bin'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']

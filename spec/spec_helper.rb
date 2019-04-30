@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'cron_parser'
+require 'cron'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
