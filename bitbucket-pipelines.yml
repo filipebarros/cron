@@ -1,4 +1,4 @@
-image: ruby:2.6.3-alpine
+image: ruby:2.6
 
 pipelines:
   default:
@@ -6,9 +6,6 @@ pipelines:
         caches:
           - bundler
         script:
-          - RUN apk update && apk upgrade && \
-               apk add --no-cache git
-          - gem update --system
           - gem install bundler
           - bundle install
     - step:
