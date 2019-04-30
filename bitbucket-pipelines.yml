@@ -6,7 +6,7 @@ pipelines:
         caches:
           - bundler
         script:
-          - bundle update --bundler
+          - gem update --system
           - bundle install
           - bundle exec rubocop
           - bundle exec rspec
