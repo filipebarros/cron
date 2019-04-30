@@ -6,9 +6,13 @@ pipelines:
         caches:
           - bundler
         script:
+          - RUN apk update && apk upgrade && \
+               apk add --no-cache git
           - gem update --system
           - gem install bundler
           - bundle install
+    - step:
+        script:
           - bundle exec rubocop
           - bundle exec rspec
 
