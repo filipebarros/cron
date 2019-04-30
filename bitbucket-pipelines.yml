@@ -8,8 +8,6 @@ pipelines:
         script:
           - gem install bundler
           - bundle install
-    - step:
-        script:
           - bundle exec rubocop
           - bundle exec rspec
 
