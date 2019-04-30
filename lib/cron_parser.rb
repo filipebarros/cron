@@ -1,6 +1,6 @@
 require 'thor'
 
-require "cron_parser/version"
+require 'cron_parser/version'
 
 module CronParser
   class Error < StandardError; end
