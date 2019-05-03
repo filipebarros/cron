@@ -10,3 +10,6 @@ Metrics/LineLength:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
