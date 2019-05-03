@@ -7,7 +7,7 @@ pipelines:
           - bundler
         script:
           - gem install bundler
-          - bundle install
+          - bundle install --path vendor/bundle
           - bundle exec rspec
 
 definitions:
