@@ -2,4 +2,8 @@
 
 require 'cron'
 
-Cron::CLI.start(ARGV)
+if ARGV.length.eql?(7)
+  Cron::CLI.parse(*ARGV)
+else
+  Cron::CLI.parse(*ARGV.insert(5, nil))
+end
