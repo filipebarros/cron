@@ -2,13 +2,14 @@ RSpec.describe Cron::Parser do
   context 'parse' do
     subject(:parser) { described_class.parse(*arguments) }
 
-    let(:arguments) { [minute, hour, day_of_the_month, month, day_of_the_week,  command] }
+    let(:arguments) { [minute, hour, day_of_the_month, month, day_of_the_week, year, command] }
 
     let(:minute) { '*' }
     let(:hour) { '*' }
     let(:day_of_the_month) { '*' }
     let(:month) { '*' }
     let(:day_of_the_week) { '*' }
+    let(:year) { '2019-2025' }
     let(:command) { '/usr/bin/test' }
 
     let(:expected_result) do
@@ -18,6 +19,7 @@ RSpec.describe Cron::Parser do
         day_of_the_month: (1..31).to_a,
         month: (1..12).to_a,
         day_of_the_week: (1..7).to_a,
+        year: [2019, 2020, 2021, 2022, 2023, 2024, 2025],
         command: '/usr/bin/test'
       }
     end
@@ -92,6 +94,14 @@ RSpec.describe Cron::Parser do
       let(:type) { :month }
       let(:minimum) { 1 }
       let(:maximum) { 12 }
+    end
+  end
+
+  context 'with year' do
+    it_behaves_like 'regexes' do
+      let(:type) { :year }
+      let(:minimum) { 2000 }
+      let(:maximum) { 2050 }
     end
   end
 

@@ -5,7 +5,7 @@ module Cron
     DAYS_OF_THE_MONTH = 31
     MONTHS = 12
     DAYS_OF_THE_WEEK = 7
-    YEARLY = 2050
+    YEAR = 2050
 
     RANGE_MAPPER = {
       minute: (0..MINUTES),
@@ -13,18 +13,18 @@ module Cron
       day_of_the_month: (1..DAYS_OF_THE_MONTH),
       month: (1..MONTHS),
       day_of_the_week: (1..DAYS_OF_THE_WEEK),
-      yearly: (2000..YEARLY)
+      year: (2000..YEAR)
     }.freeze
 
     class << self
-      def parse(minute, hour, day_of_the_month, month, day_of_the_week, yearly, command)
+      def parse(minute, hour, day_of_the_month, month, day_of_the_week, year, command)
         {
           minute: handle(minute, :minute),
           hour: handle(hour, :hour),
           day_of_the_month: handle(day_of_the_month, :day_of_the_month),
           month: handle(month, :month),
           day_of_the_week: handle(day_of_the_week, :day_of_the_week),
-          yearly: handle(yearly, :yearly),
+          year: handle(year, :year),
           command: command
         }
       end
