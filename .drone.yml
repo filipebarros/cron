@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: install
-  image: ruby:2.6-alpine3.9
+  image: ruby:2.6-alpine3.10
   volumes:
   - name: gems
     path: /root/.gems
@@ -12,7 +12,7 @@ steps:
     - bundle install
 
 - name: lint
-  image: ruby:2.6-alpine3.9
+  image: ruby:2.6-alpine3.10
   volumes:
   - name: gems
     path: /root/.gems
@@ -20,7 +20,7 @@ steps:
   - bundle exec rubocop
 
 - name: test
-  image: ruby:2.6-alpine3.9
+  image: ruby:2.6-alpine3.10
   volumes:
   - name: gems
     path: /root/.gems
