@@ -1,31 +1,36 @@
+---
 kind: pipeline
 name: default
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
 - name: install
   image: ruby:2.6
+  commands:
+  - gem install bundler
+  - bundle install
   volumes:
   - name: gems
     path: /root/.gems
-  commands:
-    - gem install bundler
-    - bundle install
 
 - name: lint
   image: ruby:2.6
+  commands:
+  - bundle exec rubocop
   volumes:
   - name: gems
     path: /root/.gems
-  commands:
-  - bundle exec rubocop
 
 - name: test
   image: ruby:2.6
+  commands:
+  - bundle exec rspec
   volumes:
   - name: gems
     path: /root/.gems
-  commands:
-  - bundle exec rspec
 
 volumes:
 - name: gems
