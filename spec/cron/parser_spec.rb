@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Cron::Parser do
-  context 'parse' do
+  context 'when #parse' do
     subject(:parser) { described_class.parse(*arguments) }
 
     let(:arguments) { [minute, hour, day_of_the_month, month, day_of_the_week, year, command] }
