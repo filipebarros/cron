@@ -11,27 +11,27 @@ steps:
   image: ruby:2.6
   commands:
   - gem install bundler
-  - bundle install
+  - bundle install --jobs=3 --retry=3
   volumes:
-  - name: gems
-    path: /root/.gems
+  - name: bundle
+    path: /usr/local/bundle
 
 - name: lint
   image: ruby:2.6
   commands:
   - bundle exec rubocop
   volumes:
-  - name: gems
-    path: /root/.gems
+  - name: bundle
+    path: /usr/local/bundle
 
 - name: test
   image: ruby:2.6
   commands:
   - bundle exec rspec
   volumes:
-  - name: gems
-    path: /root/.gems
+  - name: bundle
+    path: /usr/local/bundle
 
 volumes:
-- name: gems
+- name: bundle
   temp: {}
