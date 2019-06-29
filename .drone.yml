@@ -9,7 +9,7 @@ steps:
     path: /root/.gems
   commands:
     - gem install bundler
-    = bundle install
+    - bundle install
 
 - name: lint
   image: ruby:2.6-alpine3.9
