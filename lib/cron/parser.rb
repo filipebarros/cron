@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cron
   class Parser
     MINUTES = 59
@@ -36,7 +38,7 @@ module Cron
         when %r{^*/\d*$}
           RANGE_MAPPER[type].step(string.delete('*/').to_i).to_a
         when /^(\d*)-(\d*)$/
-          ($1.to_i..$2.to_i).to_a
+          (Regexp.last_match(1).to_i..Regexp.last_match(2).to_i).to_a
         when /^\d*(,\d)*/
           string.split(',').map(&:to_i)
         end

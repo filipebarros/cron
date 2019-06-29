@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cron
   class Printer
     class << self

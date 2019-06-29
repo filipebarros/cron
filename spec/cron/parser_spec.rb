@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Cron::Parser do
   context 'parse' do
     subject(:parser) { described_class.parse(*arguments) }
