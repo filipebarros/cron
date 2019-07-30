@@ -1,7 +1,5 @@
 # Cron
 
-[![Build Status](https://cloud.drone.io/api/badges/filipebarros/cron/status.svg)](https://cloud.drone.io/filipebarros/cron)
-
 ## Requirements
 Ruby - I used ruby 2.6.3
 Bundler - 2.0.1
