@@ -12,6 +12,9 @@ jobs:
             - cron-v1-{{ checksum "Gemfile.lock" }}
             - cron-v1-
       - run:
+          name: Install Bundler
+          command: gem install bundler -v 2.0.2
+      - run:
           name: Bundle Install
           command: bundle check --path vendor/bundle || bundle install --deployment
       - save_cache:
