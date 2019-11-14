@@ -16,16 +16,18 @@ jobs:
           command: gem install bundler -v 2.0.2
       - run:
           name: Bundle Install
-          command: bundle check --path vendor/bundle || bundle install --deployment
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       - save_cache:
           key: cron-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+      - run: mkdir ~/rspec
       - run:
           name: Run Rubocop
           command: bundle exec rubocop
       - run:
           name: Run Tests
-          command: bundle exec rspec --format html --out test_results/rspec.html
+          command: bundle exec rspec --format progress --format RspecJunitFormatter -o ~/rspec/rspec.xml
+          when: always
       - store_test_results:
-          path: test_results
+          path: ~/rspec
