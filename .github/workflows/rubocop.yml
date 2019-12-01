@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Rubocop
 
 on: [push]
 
@@ -27,5 +27,3 @@ jobs:
       run: bundle install --jobs 4 --retry 3
     - name: Run Rubocop
       run: bundle exec rubocop --parallel
-    - name: Run Specs
-      run: bundle exec rspec
